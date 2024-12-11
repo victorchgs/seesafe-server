@@ -1,0 +1,21 @@
+[
+  {
+    "id": "id-1733937352777-0.fun2s1vxo3",
+    "sensorReadings": [
+      {
+        "gyroscope": {
+          "x": 0.1,
+          "y": -0.2,
+          "z": 0.3
+        },
+        "accelerometer": {
+          "x": 9.8,
+          "y": 0,
+          "z": -9.8
+        },
+        "distance": 2.5,
+        "timestamp": "2024-12-11T18:21:43.206Z"
+      }
+    ]
+  }
+]
