@@ -4,6 +4,7 @@
     "start": "node coap-server.js"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "coap": "^1.4.0",
     "express": "^4.21.2"
   }
