@@ -7,10 +7,11 @@ import * as coap from "coap";
 
 // Teste de envio de dados de sensores com CoAP
 const payload = JSON.stringify({
-  id: "id-1733937352777-0.fun2s1vxo3", // ID do usuário
+  id: "id-1733937579625-0.iieynhg88z", // ID do usuário
   gyro: { x: 0.1, y: -0.2, z: 0.3 }, // Dados do giroscópio
   accel: { x: 9.8, y: 0.0, z: -9.8 }, // Dados do acelerômetro
   distance: 2.5, // Distância do objeto em metros
+  geolocation: { lat: -23.55052, lng: -46.633308 }, // Localização do usuário
 });
 
 const req = coap.request({

@@ -75,14 +75,9 @@ function heandlePostSensorData(req, res) {
 
   try {
     const data = JSON.parse(payload);
-    const { id, gyro: gyroscope, accel: accelerometer, distance } = data;
+    const { id, gyro: gyroscope, accel: accelerometer, distance, geolocation} = data;
 
-    console.log("Payload recebido:", data);
-    console.log("ID:", id);
-    console.log("Giroscópio:", gyroscope);
-    console.log("Acelerômetro:", accelerometer);
-    console.log("Distância:", distance);
-    if (!id || !gyroscope || !accelerometer || distance === undefined) {
+    if (!id || !gyroscope || !accelerometer || distance === undefined || !geolocation) {
       res.code = "4.00";
       return res.end("Payload inválido. Dados com formato inválido.");
     }
@@ -93,7 +88,7 @@ function heandlePostSensorData(req, res) {
         return res.end("ID inválido ou não autenticado.");
       }
 
-      const sensorData = { gyroscope, accelerometer, distance };
+      const sensorData = { gyroscope, accelerometer, distance, geolocation};
       saveSensorData(id, sensorData);
 
       res.code = "2.05";

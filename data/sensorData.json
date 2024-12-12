@@ -14,7 +14,52 @@
           "z": -9.8
         },
         "distance": 2.5,
-        "timestamp": "2024-12-11T18:21:43.206Z"
+        "geolocation": {
+          "lat": -23.55052,
+          "lng": -46.633308
+        },
+        "timestamp": "2024-12-12T16:04:41.937Z"
+      }
+    ]
+  },
+  {
+    "id": "id-1733937579625-0.iieynhg88z",
+    "sensorReadings": [
+      {
+        "gyroscope": {
+          "x": 0.1,
+          "y": -0.2,
+          "z": 0.3
+        },
+        "accelerometer": {
+          "x": 9.8,
+          "y": 0,
+          "z": -9.8
+        },
+        "distance": 2.5,
+        "geolocation": {
+          "lat": -23.55052,
+          "lng": -46.633308
+        },
+        "timestamp": "2024-12-12T16:12:59.593Z"
+      },
+      {
+        "gyroscope": {
+          "x": 0.1,
+          "y": -0.2,
+          "z": 0.3
+        },
+        "accelerometer": {
+          "x": 9.8,
+          "y": 0,
+          "z": -9.8
+        },
+        "distance": 2.5,
+        "geolocation": {
+          "lat": -23.55052,
+          "lng": -46.633308
+        },
+        "timestamp": "2024-12-12T16:13:33.497Z"
       }
     ]
   }
