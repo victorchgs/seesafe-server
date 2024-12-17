@@ -1,1 +1,123 @@
-[]
+[
+  {
+    "deviceId": "id-1734214966574-0.d3yo2mi20kp",
+    "sensorsReadings": [
+      {
+        "accelerometerData": {
+          "x": 0.008544921875,
+          "y": 0.0068359375,
+          "z": 1.00732421875,
+          "timestamp": 619311.74714765
+        },
+        "gyroscopeData": {
+          "x": 0.01710422709584236,
+          "y": 0.03298672288656235,
+          "z": 0,
+          "timestamp": 619311.718055612
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 21.660999298095703,
+            "longitude": -38.5344819,
+            "altitude": 70.19999694824219,
+            "heading": 0,
+            "latitude": -3.7411246,
+            "altitudeAccuracy": 7.674045562744141,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1734470718331
+        },
+        "imageData": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fseesafe-app-7a6a188f-7a28-4d12-b1c3-66139b9a3c16/Camera/2c0da302-ef96-4f2e-b238-7eafbe299fb4.jpg",
+        "timestamp": "2024-12-17T21:25:41.151Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.008544921875,
+          "y": 0.007080078125,
+          "z": 1.00390625,
+          "timestamp": 619321.154882807
+        },
+        "gyroscopeData": {
+          "x": 0.019547687843441963,
+          "y": 0.03848451003432274,
+          "z": 0,
+          "timestamp": 619321.133853268
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 47.5,
+            "longitude": -38.5347688,
+            "altitude": 70.19999694824219,
+            "heading": 209.5433807373047,
+            "latitude": -3.7409359,
+            "altitudeAccuracy": 7.891280651092529,
+            "speed": 0.940778374671936
+          },
+          "mocked": false,
+          "timestamp": 1734470740054
+        },
+        "imageData": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fseesafe-app-7a6a188f-7a28-4d12-b1c3-66139b9a3c16/Camera/835ae3d0-f264-485a-a4c0-022aad5a6095.jpg",
+        "timestamp": "2024-12-17T21:26:40.064Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.0107421875,
+          "y": 0.0068359375,
+          "z": 1.0146484375,
+          "timestamp": 619392.085953382
+        },
+        "gyroscopeData": {
+          "x": -0.0012217304902151227,
+          "y": -0.00427605677396059,
+          "z": 0,
+          "timestamp": 619392.051921267
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 20.34600067138672,
+            "longitude": -38.534484,
+            "altitude": 70.19999694824219,
+            "heading": 0,
+            "latitude": -3.7411101,
+            "altitudeAccuracy": 4.696966171264648,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1734470798513
+        },
+        "imageData": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fseesafe-app-7a6a188f-7a28-4d12-b1c3-66139b9a3c16/Camera/a331e743-9c28-4691-a302-3d29431392e2.jpg",
+        "timestamp": "2024-12-17T21:27:04.274Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.012939453125,
+          "y": 0.005859375,
+          "z": 1.013916015625,
+          "timestamp": 619463.700505647
+        },
+        "gyroscopeData": {
+          "x": 0.005497787147760391,
+          "y": 0.009162978269159794,
+          "z": 0,
+          "timestamp": 619463.665463378
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 20.118999481201172,
+            "longitude": -38.5344325,
+            "altitude": 70.19999694824219,
+            "heading": 0,
+            "latitude": -3.7410991,
+            "altitudeAccuracy": 5.719306468963623,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1734470869813
+        },
+        "imageData": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fseesafe-app-7a6a188f-7a28-4d12-b1c3-66139b9a3c16/Camera/b44dc543-57e3-40ca-b2bb-8ad965caa87d.jpg",
+        "timestamp": "2024-12-17T21:28:03.466Z"
+      }
+    ]
+  }
+]
