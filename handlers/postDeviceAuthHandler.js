@@ -6,8 +6,8 @@ export function postDeviceAuthHandler(req, res) {
 
   try {
     const data = JSON.parse(payload);
-    const { deviceId } = data;
     const devices = loadDevices();
+    let { deviceId } = data;
 
     if (deviceId) {
       console.log("ID recebido:", deviceId);
@@ -20,11 +20,10 @@ export function postDeviceAuthHandler(req, res) {
         console.log(`Último acesso atualizado para o ID: ${deviceId}`);
       } else {
         console.log("ID não encontrado. Gerando novo ID...");
-
-        const newDeviceId = generateId();
+        deviceId = generateId();
 
         devices.push({
-          id: newDeviceId,
+          id: deviceId,
           createdAt: new Date().toISOString(),
           lastAccessed: new Date().toISOString(),
           status: "active",
@@ -32,11 +31,10 @@ export function postDeviceAuthHandler(req, res) {
       }
     } else {
       console.log("ID vazio. Gerando novo ID...");
-
-      const newDeviceId = generateId();
+      deviceId = generateId();
 
       devices.push({
-        id: newDeviceId,
+        id: deviceId,
         createdAt: new Date().toISOString(),
         lastAccessed: new Date().toISOString(),
         status: "active",
@@ -49,7 +47,7 @@ export function postDeviceAuthHandler(req, res) {
     res.end(
       JSON.stringify({
         message: "Dispositivo autenticado com sucesso",
-        data: { deviceId: deviceId || newDeviceId },
+        data: { deviceId },
       })
     );
   } catch (error) {
