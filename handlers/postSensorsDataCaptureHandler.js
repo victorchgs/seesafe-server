@@ -6,27 +6,19 @@ export function postSensorsDataCaptureHandler(req, res) {
 
   try {
     const data = JSON.parse(payload);
-    const {
-      deviceId,
-      accelerometerData,
-      gyroscopeData,
-      geolocationData,
-      imageData,
-    } = data;
+    const { deviceId, accelerometerData, gyroscopeData, geolocationData } =
+      data;
 
-    if (
-      !deviceId ||
-      !accelerometerData ||
-      !gyroscopeData ||
-      !geolocationData ||
-      !imageData
-    ) {
+    if (!deviceId || !accelerometerData || !gyroscopeData || !geolocationData) {
       res.code = "4.00";
 
       return res.end(
         JSON.stringify({
-          error: "Payload inválido",
-          message: "Dados com formato inválido.",
+          statusCode: "4.00",
+          body: {
+            message: "Bad Request",
+            data: "Dados com formato inválido.",
+          },
         })
       );
     }
@@ -36,25 +28,31 @@ export function postSensorsDataCaptureHandler(req, res) {
 
       return res.end(
         JSON.stringify({
-          error: "ID inválido ou não autenticado",
+          statusCode: "4.01",
+          body: {
+            message: "Unauthorized",
+            data: "ID inválido ou não autenticado.",
+          },
         })
       );
     }
 
-    const sensorData = {
+    const sensorsData = {
       accelerometerData,
       gyroscopeData,
       geolocationData,
-      imageData,
     };
 
-    saveSensorsData(deviceId, sensorData);
+    saveSensorsData(deviceId, sensorsData);
 
     res.code = "2.05";
     res.end(
       JSON.stringify({
-        message: "Dados do sensor recebidos com sucesso.",
-        data: { deviceId, sensorData },
+        statusCode: "2.05",
+        body: {
+          message: "Content",
+          data: JSON.stringify({ deviceId, sensorsData }),
+        },
       })
     );
   } catch (error) {
@@ -63,7 +61,11 @@ export function postSensorsDataCaptureHandler(req, res) {
     res.code = "4.00";
     res.end(
       JSON.stringify({
-        error: "Erro ao processar o payload",
+        statusCode: "4.00",
+        body: {
+          message: "Bad Request",
+          data: "Erro ao processar o payload.",
+        },
       })
     );
   }
