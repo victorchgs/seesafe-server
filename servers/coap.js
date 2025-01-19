@@ -6,14 +6,30 @@ const routes = {
   "/deviceAuth": {
     GET: (req, res) => {
       res.code = "4.04";
-      res.end("GET deviceAuth");
+      res.end(
+        JSON.stringify({
+          statusCode: "4.04",
+          body: {
+            message: "Not Found",
+            data: "GET não suportado para /deviceAuth",
+          },
+        })
+      );
     },
     POST: postDeviceAuthHandler,
   },
   "/sensorsDataCapture": {
     GET: (req, res) => {
       res.code = "2.05";
-      res.end("GET sensorsDataCapture");
+      res.end(
+        JSON.stringify({
+          statusCode: "2.05",
+          body: {
+            message: "Content",
+            data: "GET sensorsDataCapture",
+          },
+        })
+      );
     },
     POST: postSensorsDataCaptureHandler,
   },
@@ -24,8 +40,16 @@ function routeHandler(req, res) {
 
   if (!url || !method) {
     res.code = "4.00";
-
-    return res.end("URL ou método inválido");
+    res.end(
+      JSON.stringify({
+        statusCode: "4.00",
+        body: {
+          message: "Bad Request",
+          data: "URL ou método inválido",
+        },
+      })
+    );
+    return;
   }
 
   const resource = routes[url];
@@ -35,7 +59,15 @@ function routeHandler(req, res) {
   }
 
   res.code = "4.04";
-  res.end("Recurso não encontrado");
+  res.end(
+    JSON.stringify({
+      statusCode: "4.04",
+      body: {
+        message: "Not Found",
+        data: "Recurso não encontrado",
+      },
+    })
+  );
 }
 
 const server = coap.createServer();

@@ -7,7 +7,7 @@ export function postDeviceAuthHandler(req, res) {
   try {
     const data = JSON.parse(payload);
     const devices = loadDevices();
-    let { deviceId } = data;
+    let deviceId = data.deviceId;
 
     if (deviceId) {
       console.log("ID recebido:", deviceId);
@@ -46,8 +46,11 @@ export function postDeviceAuthHandler(req, res) {
     res.code = "2.05";
     res.end(
       JSON.stringify({
-        message: "Dispositivo autenticado com sucesso",
-        data: { deviceId },
+        statusCode: "2.05",
+        body: {
+          message: "Content",
+          data: JSON.stringify({ deviceId }),
+        },
       })
     );
   } catch (error) {
@@ -56,8 +59,14 @@ export function postDeviceAuthHandler(req, res) {
     res.code = "4.00";
     res.end(
       JSON.stringify({
-        error: "Erro ao processar o payload",
-        details: error.message,
+        statusCode: "4.00",
+        body: {
+          message: "Bad Request",
+          data: JSON.stringify({
+            error: "Erro ao processar o payload",
+            details: error.message,
+          }),
+        },
       })
     );
   }
