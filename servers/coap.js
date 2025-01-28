@@ -33,6 +33,9 @@ const routes = {
     },
     POST: postSensorsDataCaptureHandler,
   },
+  "/predictFall": {
+    POST: postPredictionHandler,
+  },
 };
 
 function routeHandler(req, res) {
