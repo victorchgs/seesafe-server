@@ -46,9 +46,11 @@ function routeHandler(req, res) {
     return;
   }
 
-  const resource = routes[url];
+  const [path, query] = url.split("?");
+  const resource = routes[path];
 
   if (resource && resource[method]) {
+    req.query = Object.fromEntries(new URLSearchParams(query));
     return resource[method](req, res);
   }
 
