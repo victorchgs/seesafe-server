@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import kurtosis, skew
 
-def get_features(acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, interval=6):
+def get_features(acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, interval=200):
     acc_x_linear = acc_x - np.mean(acc_x)
     acc_y_linear = acc_y - np.mean(acc_y)
     acc_z_linear = acc_z - np.mean(acc_z)
@@ -38,7 +38,7 @@ def get_features(acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, interval=6):
             gyro_kurtosis,
             acc_skewness,
             gyro_skewness,
-            np.max(acc_mag_segment),  # linear acc max
+            np.max(acc_mag_segment),  
             post_lin_max,
             post_gyro_max
         ])

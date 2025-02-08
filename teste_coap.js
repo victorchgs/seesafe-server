@@ -1,35 +1,8 @@
-// import coap from "coap";
-
-// function sendCoapRequest(method, path, payload = null) {
-//   const req = coap.request({
-//     hostname: "localhost",
-//     port: 5683,
-//     method,
-//     pathname: path,
-//   });
-
-//   req.on("response", (res) => {
-//     console.log(`Response: ${res.code}`);
-//     res.pipe(process.stdout);
-//   });
-
-//   if (payload) {
-//     req.write(JSON.stringify(payload));
-//   }
-
-//   req.end();
-// }
-
-// // Testando cada rota
-// sendCoapRequest("POST", "/deviceAuth", { deviceId: "123" });
-// sendCoapRequest("GET", "/sensorsDataCapture");
-// sendCoapRequest("POST", "/predictFall", { sensorData: [1.2, 3.4, 5.6] });
-
 import coap from "coap";
 
 const SERVER_HOST = "localhost";
 const SERVER_PORT = 5683;
-const ENDPOINT = "/predictFall";
+const ENDPOINT = "/sensorsData";
 
 async function sendCoapRequest(method, path, payload = null) {
   return new Promise((resolve, reject) => {
@@ -62,74 +35,213 @@ async function sendCoapRequest(method, path, payload = null) {
   });
 }
 
-// 🟢 Teste 1: Enviar dados válidos para predição
+// Teste envio de dados
+// Função para dividir um objeto JSON em partes menores
+function chunkPayload(payload, chunkSize) {
+  const jsonString = JSON.stringify(payload);
+  const chunks = [];
+
+  for (let i = 0; i < jsonString.length; i += chunkSize) {
+    chunks.push(jsonString.substring(i, i + chunkSize));
+  }
+
+  return chunks;
+}
+
 async function testValidPrediction() {
-  console.log("\n🟢 Teste 1: Predição com dados válidos");
-  await sendCoapRequest("POST", ENDPOINT, 
-    {
-      "acc_x": [0.5, 0.6, 0.7],
-      "acc_y": [1.2, 1.3, 1.4],
-      "acc_z": [9.8, 9.9, 10.0],
-      "gyro_x": [0.03, 0.05, 0.06],
-      "gyro_y": [-0.02, -0.01, 0.0],
-      "gyro_z": [0.01, 0.02, 0.03]
-    }
+  console.log("\nPredição com dados válidos");
+
+  const deviceId = "id-1739017694234-nqwo0fux099";
+    const payload = {
+      accelerometerData: [
+        {
+          x: 0,
+          y: 0,
+          z: 1.000340461730957,
+          timestamp: 56266.2362884
+        },
+        {
+          x: 0.02,
+          y: -0.01,
+          z: 1.001,
+          timestamp: 56266.3362885
+        },
+        {
+          x: -0.03,
+          y: 0.02,
+          z: 1.003,
+          timestamp: 56266.4362886
+        },
+        {
+          x: 0.01,
+          y: -0.01,
+          z: 1.0045,
+          timestamp: 56266.5362887
+        },
+        {
+          x: -0.02,
+          y: 0.03,
+          z: 1.007,
+          timestamp: 56266.6372880
+        },
+        {
+          x: 0,
+          y: -0.02,
+          z: 1.010,
+          timestamp: 56266.7372881
+        },
+        {
+          x: 0.02,
+          y: 0.01,
+          z: 1.012,
+          timestamp: 56266.8372882
+        },
+        {
+          x: -0.01,
+          y: -0.03,
+          z: 1.0145,
+          timestamp: 56266.9372884
+        },
+        {
+          x: 0.01,
+          y: 0.02,
+          z: 1.016,
+          timestamp: 56267.0372885
+        },
+        {
+          x: -0.01,
+          y: 0.01,
+          z: 1.018,
+          timestamp: 56267.1372886
+        },
+        {
+          x: 0.03,
+          y: -0.02,
+          z: 1.02,
+          timestamp: 56267.2372887
+        },
+        {
+          x: -0.02,
+          y: 0.02,
+          z: 1.022,
+          timestamp: 56267.3372888
+        }
+      ],
+      gyroscopeData: [
+        {
+          x: 0,
+          y: 0,
+          z: 0,
+          timestamp: 56266.22490394
+        },
+        {
+          x: 0.01,
+          y: -0.01,
+          z: 0.02,
+          timestamp: 56266.33490395
+        },
+        {
+          x: -0.02,
+          y: 0.01,
+          z: -0.02,
+          timestamp: 56266.44490396
+        },
+        {
+          x: 0.03,
+          y: -0.01,
+          z: 0.01,
+          timestamp: 56266.55490397
+        },
+        {
+          x: -0.01,
+          y: 0.02,
+          z: -0.01,
+          timestamp: 56266.66490400
+        },
+        {
+          x: 0,
+          y: -0.01,
+          z: 0,
+          timestamp: 56266.77490401
+        },
+        {
+          x: 0.01,
+          y: 0.01,
+          z: -0.02,
+          timestamp: 56266.88490402
+        },
+        {
+          x: -0.02,
+          y: -0.01,
+          z: 0.01,
+          timestamp: 56266.99490403
+        },
+        {
+          x: 0.02,
+          y: 0.02,
+          z: -0.01,
+          timestamp: 56267.10490404
+        },
+        {
+          x: -0.01,
+          y: -0.02,
+          z: 0.02,
+          timestamp: 56267.21490405
+        },
+        {
+          x: 0.03,
+          y: 0.01,
+          z: -0.03,
+          timestamp: 56267.32490406
+        },
+        {
+          x: -0.02,
+          y: 0.03,
+          z: 0.01,
+          timestamp: 56267.43490407
+        }
+      ],
+      locationData: {
+        timestamp: 1739035981882,
+        mocked: false,
+        coords: {
+          altitude: 0,
+          heading: 0,
+          altitudeAccuracy: 0.5,
+          latitude: 40.7579733,
+          speed: 0,
+          longitude: -73.9855417,
+          accuracy: 5
+        }
+      },
+      timestamp: "2025-02-08T17:33:04.269Z"
+    };
     
-  );
+  
+
+  // Divide o payload em chunks de até 200 caracteres
+  const chunkSize = 200;
+  const chunks = chunkPayload(payload, chunkSize);
+  const totalChunks = chunks.length;
+
+  for (let i = 0; i < totalChunks; i++) {
+    const chunkData = {
+      deviceId,
+      chunk: chunks[i],
+      index: i,
+      totalChunks
+    };
+
+    console.log(`Enviando chunk ${i + 1}/${totalChunks}...`);
+    sendCoapRequest("POST", ENDPOINT, chunkData);
+  }
 }
 
-// 🔴 Teste 2: Enviar dados incompletos (deve retornar erro 4.00)
-async function testIncompleteData() {
-  console.log("\n🔴 Teste 2: Predição com dados incompletos");
-  await sendCoapRequest("POST", ENDPOINT, {
-    acc_x: 0.5,
-    acc_y: 1.2,
-    acc_z: 9.8,
-    // gyro_x ausente!
-    gyro_y: -0.02,
-    gyro_z: 0.01,
-  });
-}
-
-// 🟡 Teste 3: Testar um método inválido (GET não suportado)
-async function testInvalidMethod() {
-  console.log("\n🟡 Teste 3: Método inválido (GET)");
-  await sendCoapRequest("GET", ENDPOINT);
-}
-
-// 🔵 Teste 4: Enviar JSON malformado
-async function testMalformedJSON() {
-  console.log("\n🔵 Teste 4: JSON malformado");
-  const req = coap.request({
-    hostname: SERVER_HOST,
-    port: SERVER_PORT,
-    method: "POST",
-    pathname: ENDPOINT,
-  });
-
-  req.on("response", (res) => {
-    let responseData = "";
-    res.on("data", (chunk) => (responseData += chunk.toString()));
-    res.on("end", () => {
-      console.log(`🔹 Response (${res.code}):`, responseData);
-    });
-  });
-
-  req.on("error", (err) => {
-    console.error("❌ Erro na requisição:", err.message);
-  });
-
-  req.write('{"acc_x": 0.5, "gyro_x": }'); // JSON malformado!
-  req.end();
-}
 
 // 🚀 Executar os testes em sequência
-async function runTests() {
-  console.log("🚀 Iniciando testes de predição...\n");
-  await testValidPrediction();
-  // await testIncompleteData();
-  // await testInvalidMethod();
-  // await testMalformedJSON();
-}
+// async function runTests() {
+//   console.log("🚀 Iniciando testes de predição...\n");
+//   await testValidPrediction();
+// }
 
-runTests();
+testValidPrediction();

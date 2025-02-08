@@ -5,6 +5,7 @@ import numpy as np
 import joblib
 from util import get_features  # Certifique-se de que a função get_features esteja disponível
 from typing import List
+import pandas as pd
 
 app = FastAPI()
 
@@ -14,40 +15,48 @@ model_path_scaler = os.path.join("models", "scaler.pkl")
 scaler = joblib.load(model_path_scaler)
 knn_model = joblib.load(model_path_knn)
 
-class PredictionRequest(BaseModel):
-    acc_x: List[float]
-    acc_y: List[float]
-    acc_z: List[float]
-    gyro_x: List[float]
-    gyro_y: List[float]
-    gyro_z: List[float]
+class SensorData(BaseModel):
+    x: float
+    y: float
+    z: float
+    timestamp: float
 
+class PredictionRequest(BaseModel):
+    gyroscopeData: List[SensorData]
+    accelerometerData: List[SensorData]
 
 @app.post("/predict")
 async def predict(data: PredictionRequest):
-    print("Recebendo dados para predição: ", data)
     try:
-        acc_x = np.array(data.acc_x)
-        acc_y = np.array(data.acc_y)
-        acc_z = np.array(data.acc_z)
-        gyro_x = np.array(data.gyro_x)
-        gyro_y = np.array(data.gyro_y)
-        gyro_z = np.array(data.gyro_z)
+        gyro_df = pd.DataFrame([sensor.dict() for sensor in data.gyroscopeData])
+        accel_df = pd.DataFrame([sensor.dict() for sensor in data.accelerometerData])
+        nearest_indices = gyro_df['timestamp'].apply(
+            lambda t: np.argmin(np.abs(accel_df['timestamp'] - t))
+        )
 
-        features = get_features(acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z)
+        gyro_df['nearest_acc_timestamp'] = accel_df['timestamp'].iloc[nearest_indices].values
+        combined_data = gyro_df.merge(accel_df, left_on='nearest_acc_timestamp', right_on='timestamp', suffixes=('_gyro', '_acc'))
+
+        combined_data.drop(columns=['nearest_acc_timestamp'], inplace=True)
+
+        features = get_features(
+            combined_data["x_acc"], 
+            combined_data["y_acc"], 
+            combined_data["z_acc"], 
+            combined_data["x_gyro"], 
+            combined_data["y_gyro"], 
+            combined_data["z_gyro"])
 
         if len(features) == 0:
             return {"error": "Não foi possível extrair features dos dados."}
 
-        # Normalizar as features
-        features_scaled = scaler.transform(features)
-
-        # Fazer predição
-        predictions = knn_model.predict(features_scaled)
-        # print("predições: ", predictions)
+        features_scaled = scaler.transform(features) # normalizar features
+        predictions = knn_model.predict(features_scaled) # fazer predição
+        
         return {"predictions": predictions.tolist()}
     
     except Exception as e:
+        print("Erro ao fazer predição: ", e)
         return {"error": str(e)}
     
 if __name__ == "__main__":
