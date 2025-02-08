@@ -1,5 +1,6 @@
 import { saveSensorsData } from "../utils/sensorsUtils.js";
 import { validateDeviceId } from "../utils/deviceUtils.js";
+import { predict } from "../services/knnService.js";
 
 export function postSensorsDataCaptureHandler(req, res) {
   const payload = req.payload?.toString();
@@ -45,13 +46,15 @@ export function postSensorsDataCaptureHandler(req, res) {
 
     saveSensorsData(deviceId, sensorsData);
 
+    const failResult = predict(sensorsData);
+
     res.code = "2.05";
     res.end(
       JSON.stringify({
         statusCode: "2.05",
         body: {
           message: "Content",
-          data: JSON.stringify({ deviceId, sensorsData }),
+          data: JSON.stringify({ deviceId, sensorsData }), // Modificação para retornar os dados
         },
       })
     );

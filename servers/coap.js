@@ -1,7 +1,6 @@
 import coap from "coap";
 import { postDeviceAuthHandler } from "../handlers/postDeviceAuthHandler.js";
 import { postSensorsDataCaptureHandler } from "../handlers/postSensorsDataCaptureHandler.js";
-import { postPredictionHandler } from "../handlers/postPredictionHandler.js";
 
 const routes = {
   "/deviceAuth": {
@@ -33,9 +32,6 @@ const routes = {
       );
     },
     POST: postSensorsDataCaptureHandler,
-  },
-  "/predictFall": {
-    POST: postPredictionHandler,
   },
 };
 

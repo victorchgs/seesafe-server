@@ -25,7 +25,7 @@ class PredictionRequest(BaseModel):
 
 @app.post("/predict")
 async def predict(data: PredictionRequest):
-    print("Recebendo dados para predição.")
+    print("Recebendo dados para predição: ", data)
     try:
         acc_x = np.array(data.acc_x)
         acc_y = np.array(data.acc_y)
@@ -34,7 +34,6 @@ async def predict(data: PredictionRequest):
         gyro_y = np.array(data.gyro_y)
         gyro_z = np.array(data.gyro_z)
 
-        # Extrair features
         features = get_features(acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z)
 
         if len(features) == 0:
@@ -50,3 +49,8 @@ async def predict(data: PredictionRequest):
     
     except Exception as e:
         return {"error": str(e)}
+    
+if __name__ == "__main__":
+    import uvicorn
+    # Iniciar o servidor FastAPI
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
