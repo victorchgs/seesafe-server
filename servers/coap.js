@@ -1,6 +1,8 @@
 import coap from "coap";
+import { getSensorsDataHandler } from "../handlers/getSensorsDataHandler.js";
 import { postDeviceAuthHandler } from "../handlers/postDeviceAuthHandler.js";
-import { postSensorsDataCaptureHandler } from "../handlers/postSensorsDataCaptureHandler.js";
+import { postSensorsDataHandler } from "../handlers/postSensorsDataHandler.js";
+import { postShareCodeValidationHandler } from "../handlers/postShareCodeValidationHandler.js";
 
 const routes = {
   "/deviceAuth": {
@@ -18,20 +20,12 @@ const routes = {
     },
     POST: postDeviceAuthHandler,
   },
-  "/sensorsDataCapture": {
-    GET: (req, res) => {
-      res.code = "2.05";
-      res.end(
-        JSON.stringify({
-          statusCode: "2.05",
-          body: {
-            message: "Content",
-            data: "GET sensorsDataCapture",
-          },
-        })
-      );
-    },
-    POST: postSensorsDataCaptureHandler,
+  "/sensorsData": {
+    GET: getSensorsDataHandler,
+    POST: postSensorsDataHandler,
+  },
+  "/shareCodeValidation": {
+    POST: postShareCodeValidationHandler,
   },
 };
 

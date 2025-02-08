@@ -3,7 +3,7 @@ import { validateDeviceId } from "../utils/deviceUtils.js";
 
 const chunksStore = {};
 
-export function postSensorsDataCaptureHandler(req, res) {
+export function postSensorsDataHandler(req, res) {
   const payload = req.payload?.toString();
 
   try {
@@ -56,7 +56,17 @@ export function postSensorsDataCaptureHandler(req, res) {
       try {
         parsedData = JSON.parse(completePayload);
       } catch (error) {
-        return res.end();
+        res.code = "4.00";
+
+        return res.end(
+          JSON.stringify({
+            statusCode: "4.00",
+            body: {
+              message: "Bad Request",
+              data: "Erro ao processar JSON completo.",
+            },
+          })
+        );
       }
 
       delete chunksStore[deviceId];
@@ -64,18 +74,7 @@ export function postSensorsDataCaptureHandler(req, res) {
       const { accelerometerData, gyroscopeData, locationData } = parsedData;
       const sensorsData = { accelerometerData, gyroscopeData, locationData };
 
-      console.log(JSON.stringify({ deviceId, sensorsData }));
-
-      res.code = "2.05";
-      res.end(
-        JSON.stringify({
-          statusCode: "2.05",
-          body: {
-            message: "Content",
-            data: JSON.stringify({ deviceId }),
-          },
-        })
-      );
+      saveSensorsData(deviceId, sensorsData);
     }
   } catch (error) {
     if (
