@@ -2,41 +2,55 @@ import fs from "fs";
 
 const sensorsDataPath = "./data/sensorsData.json";
 
-export function saveSensorsData(deviceId, sensorsData) {
-  fs.readFile(sensorsDataPath, (err, data) => {
-    const allSensorsData = err
-      ? []
-      : (() => {
-          try {
-            return JSON.parse(data);
-          } catch (parseError) {
-            console.error(
-              "Erro ao processar os dados dos sensores:",
-              parseError
-            );
+export function loadSensorsData(deviceId) {
+  if (!fs.existsSync(sensorsDataPath)) {
+    return null;
+  }
 
-            return [];
-          }
-        })();
+  try {
+    const allSensorsData = JSON.parse(
+      fs.readFileSync(sensorsDataPath, "utf-8")
+    );
 
     const deviceData = allSensorsData.find(
       (entry) => entry.deviceId === deviceId
     );
 
-    if (deviceData) {
-      deviceData.sensorsReadings.push({
+    return deviceData ? deviceData.sensorsReadings : null;
+  } catch (error) {
+    console.error("Erro ao carregar dados dos sensores:", error);
+    return null;
+  }
+}
+
+export function saveSensorsData(deviceId, sensorsData) {
+  fs.readFile(sensorsDataPath, (err, data) => {
+    let allSensorsData = [];
+
+    if (!err) {
+      try {
+        allSensorsData = JSON.parse(data);
+      } catch (parseError) {
+        console.error("Erro ao processar os dados dos sensores:", parseError);
+      }
+    }
+
+    const deviceIndex = allSensorsData.findIndex(
+      (entry) => entry.deviceId === deviceId
+    );
+
+    if (deviceIndex !== -1) {
+      allSensorsData[deviceIndex].sensorsReadings = {
         ...sensorsData,
         timestamp: new Date().toISOString(),
-      });
+      };
     } else {
       allSensorsData.push({
         deviceId,
-        sensorsReadings: [
-          {
-            ...sensorsData,
-            timestamp: new Date().toISOString(),
-          },
-        ],
+        sensorsReadings: {
+          ...sensorsData,
+          timestamp: new Date().toISOString(),
+        },
       });
     }
 

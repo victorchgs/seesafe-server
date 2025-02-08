@@ -1,5 +1,6 @@
 import { loadDevices, saveDevices } from "../utils/deviceUtils.js";
 import { generateId } from "../utils/idUtils.js";
+import { generateShareCode } from "../utils/shareCodeUtils.js";
 
 export function postDeviceAuthHandler(req, res) {
   const payload = req.payload?.toString();
@@ -8,6 +9,7 @@ export function postDeviceAuthHandler(req, res) {
     const data = JSON.parse(payload);
     const devices = loadDevices();
     let deviceId = data.deviceId;
+    let shareCode = data.shareCode;
 
     if (deviceId) {
       console.log("ID recebido:", deviceId);
@@ -21,9 +23,11 @@ export function postDeviceAuthHandler(req, res) {
       } else {
         console.log("ID não encontrado. Gerando novo ID...");
         deviceId = generateId();
+        shareCode = generateShareCode(deviceId);
 
         devices.push({
           id: deviceId,
+          shareCode,
           createdAt: new Date().toISOString(),
           lastAccessed: new Date().toISOString(),
           status: "active",
@@ -32,9 +36,11 @@ export function postDeviceAuthHandler(req, res) {
     } else {
       console.log("ID vazio. Gerando novo ID...");
       deviceId = generateId();
+      shareCode = generateShareCode(deviceId);
 
       devices.push({
         id: deviceId,
+        shareCode,
         createdAt: new Date().toISOString(),
         lastAccessed: new Date().toISOString(),
         status: "active",
@@ -49,7 +55,7 @@ export function postDeviceAuthHandler(req, res) {
         statusCode: "2.05",
         body: {
           message: "Content",
-          data: JSON.stringify({ deviceId }),
+          data: { deviceId, shareCode },
         },
       })
     );
@@ -62,10 +68,10 @@ export function postDeviceAuthHandler(req, res) {
         statusCode: "4.00",
         body: {
           message: "Bad Request",
-          data: JSON.stringify({
+          data: {
             error: "Erro ao processar o payload",
             details: error.message,
-          }),
+          },
         },
       })
     );
