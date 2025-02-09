@@ -1,9 +1,10 @@
 import { saveSensorsData } from "../utils/sensorsUtils.js";
 import { validateDeviceId } from "../utils/deviceUtils.js";
+import { predict_fall } from "../services/knnService.js";
 
 const chunksStore = {};
 
-export function postSensorsDataHandler(req, res) {
+export async function postSensorsDataHandler(req, res) {
   const payload = req.payload?.toString();
 
   try {
@@ -72,7 +73,13 @@ export function postSensorsDataHandler(req, res) {
       delete chunksStore[deviceId];
 
       const { accelerometerData, gyroscopeData, locationData } = parsedData;
-      const sensorsData = { accelerometerData, gyroscopeData, locationData };
+      const sensorsData = { locationData };
+
+      const lastfallPrediction = await predict_fall(
+        accelerometerData,
+        gyroscopeData
+      );
+      sensorsData.lastfallPrediction = lastfallPrediction;
 
       saveSensorsData(deviceId, sensorsData);
     }

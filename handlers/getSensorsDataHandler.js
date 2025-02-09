@@ -41,7 +41,11 @@ export function getSensorsDataHandler(req, res) {
     }
 
     const locationData = deviceData?.locationData;
-    const didFall = false;
+    
+    const lastfallPredictions = deviceData?.lastfallPrediction ?? [0]; 
+    const lastfallPrediction = Array.isArray(lastfallPredictions) ? lastfallPredictions[lastfallPredictions.length - 1] : lastfallPredictions;
+    
+    const didFall = lastfallPrediction === 1;
 
     res.code = "2.05";
     res.end(
