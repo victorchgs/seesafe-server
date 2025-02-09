@@ -1,2 +1,3 @@
 # dependencies
 node_modules/
+knn-service/__pycache__/

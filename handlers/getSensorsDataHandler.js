@@ -43,10 +43,10 @@ export function getSensorsDataHandler(req, res) {
 
     const locationData = deviceData?.locationData;
     
-    const lastfailPredictions = deviceData?.lastfailPrediction ?? [0]; // verificação se o último valor do array é 1
-    const lastfailPrediction = Array.isArray(lastfailPredictions) ? lastfailPredictions[lastfailPredictions.length - 1] : lastfailPredictions;
+    const lastfallPredictions = deviceData?.lastfallPrediction ?? [0]; 
+    const lastfallPrediction = Array.isArray(lastfallPredictions) ? lastfallPredictions[lastfallPredictions.length - 1] : lastfallPredictions;
     
-    const didFall = lastfailPrediction === 1;
+    const didFall = lastfallPrediction === 1;
 
     res.code = "2.05";
     res.end(

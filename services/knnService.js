@@ -2,7 +2,7 @@ import axios from "axios";
 
 const KNN_SERVICE_URL = "http://localhost:8000/predict";
 
-export async function predict_fail(gyroscopeData, accelerometerData) {
+export async function predict_fall(gyroscopeData, accelerometerData) {
   try {
     const data = { gyroscopeData, accelerometerData };
     

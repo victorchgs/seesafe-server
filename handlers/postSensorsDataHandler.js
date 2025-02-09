@@ -1,6 +1,6 @@
 import { saveSensorsData } from "../utils/sensorsUtils.js";
 import { validateDeviceId } from "../utils/deviceUtils.js";
-import { predict_fail } from "../services/knnService.js";
+import { predict_fall } from "../services/knnService.js";
 
 const chunksStore = {};
 
@@ -73,10 +73,10 @@ export async function postSensorsDataHandler(req, res) {
       delete chunksStore[deviceId];
 
       const { accelerometerData, gyroscopeData, locationData } = parsedData;
-      const sensorsData = { accelerometerData, gyroscopeData, locationData };
+      const sensorsData = { locationData };
 
-      const lastfailPrediction = await predict_fail(accelerometerData, gyroscopeData); // intervalo de 6 a 8 segundos para cálculo de queda
-      sensorsData.lastfailPrediction = lastfailPrediction;
+      const lastfallPrediction = await predict_fall(accelerometerData, gyroscopeData); 
+      sensorsData.lastfallPrediction = lastfallPrediction;
 
       saveSensorsData(deviceId, sensorsData);
     }
