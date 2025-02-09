@@ -163,7 +163,10 @@
           "accuracy": 5
         }
       },
-      "timestamp": "2025-02-08T22:05:53.417Z"
+      "lastfailPrediction": [
+        0
+      ],
+      "timestamp": "2025-02-09T00:23:55.666Z"
     }
   }
 ]

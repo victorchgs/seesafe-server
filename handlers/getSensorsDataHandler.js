@@ -1,6 +1,7 @@
 import { loadSensorsData } from "../utils/sensorsUtils.js";
 
 export function getSensorsDataHandler(req, res) {
+  console.log(req.query);
   const { deviceId } = req.query;
 
   if (!deviceId) {
@@ -41,7 +42,11 @@ export function getSensorsDataHandler(req, res) {
     }
 
     const locationData = deviceData?.locationData;
-    const didFall = false;
+    
+    const lastfailPredictions = deviceData?.lastfailPrediction ?? [0]; // verificação se o último valor do array é 1
+    const lastfailPrediction = Array.isArray(lastfailPredictions) ? lastfailPredictions[lastfailPredictions.length - 1] : lastfailPredictions;
+    
+    const didFall = lastfailPrediction === 1;
 
     res.code = "2.05";
     res.end(

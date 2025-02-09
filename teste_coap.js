@@ -3,6 +3,7 @@ import coap from "coap";
 const SERVER_HOST = "localhost";
 const SERVER_PORT = 5683;
 const ENDPOINT = "/sensorsData";
+// const DEVICE_ID = "id-1739017694234-nqwo0fux099";
 
 async function sendCoapRequest(method, path, payload = null) {
   return new Promise((resolve, reject) => {
@@ -216,9 +217,7 @@ async function testValidPrediction() {
       },
       timestamp: "2025-02-08T17:33:04.269Z"
     };
-    
   
-
   // Divide o payload em chunks de até 200 caracteres
   const chunkSize = 200;
   const chunks = chunkPayload(payload, chunkSize);
@@ -237,11 +236,34 @@ async function testValidPrediction() {
   }
 }
 
+async function testGetSensorsData() {
+  console.log("\n🔹 Testando obtenção de dados do sensor via CoAP...");
+  const deviceId = "id-1739017694234-nqwo0fux099";
+  try {
+    const chunkData = {
+      deviceId,
+    };
+    const response = await sendCoapRequest("GET", `/sensorsData?deviceId=${deviceId}`);
 
-// 🚀 Executar os testes em sequência
-// async function runTests() {
-//   console.log("🚀 Iniciando testes de predição...\n");
-//   await testValidPrediction();
-// }
+    if (!response || !response.data) {
+      console.error("❌ Erro: Resposta vazia ou inválida.");
+      return;
+    }
 
-testValidPrediction();
+    const responseData = JSON.parse(response.data);
+    console.log("\n✅ Resposta do Servidor:", responseData);
+
+    // Verificando o estado da predição de queda
+    const didFall = responseData.body?.data?.didFall;
+    if (didFall) {
+      console.log("⚠️ Queda detectada!");
+    } else {
+      console.log("✅ Nenhuma queda detectada.");
+    }
+  } catch (error) {
+    console.error("❌ Erro ao obter dados do sensor:", error.message);
+  }
+}
+
+// testValidPrediction();
+testGetSensorsData();
