@@ -1,3 +1,4 @@
 # dependencies
 node_modules/
 knn-service/__pycache__/
+knn-service/venv/

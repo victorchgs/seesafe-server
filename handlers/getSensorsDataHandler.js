@@ -1,7 +1,6 @@
 import { loadSensorsData } from "../utils/sensorsUtils.js";
 
 export function getSensorsDataHandler(req, res) {
-  console.log(req.query);
   const { deviceId } = req.query;
 
   if (!deviceId) {

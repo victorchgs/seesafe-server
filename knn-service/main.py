@@ -57,7 +57,7 @@ async def predict(data: PredictionRequest):
     
     except Exception as e:
         print("Erro ao fazer predição: ", e)
-        return {"error": str(e)}
+        return {"predictions": [0]}
     
 if __name__ == "__main__":
     import uvicorn

@@ -75,7 +75,10 @@ export async function postSensorsDataHandler(req, res) {
       const { accelerometerData, gyroscopeData, locationData } = parsedData;
       const sensorsData = { locationData };
 
-      const lastfallPrediction = await predict_fall(accelerometerData, gyroscopeData); 
+      const lastfallPrediction = await predict_fall(
+        accelerometerData,
+        gyroscopeData
+      );
       sensorsData.lastfallPrediction = lastfallPrediction;
 
       saveSensorsData(deviceId, sensorsData);
