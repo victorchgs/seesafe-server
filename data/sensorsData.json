@@ -3,22 +3,22 @@
     "deviceId": "id-1739017694234-nqwo0fux099",
     "sensorsReadings": {
       "locationData": {
-        "timestamp": 1739144057717,
+        "timestamp": 1739317045634,
         "mocked": false,
         "coords": {
           "altitude": 0,
-          "heading": 269.1487121582031,
+          "heading": 314.45147705078125,
           "altitudeAccuracy": 0.5,
-          "latitude": -10.0905206,
-          "speed": 117.64141845703125,
-          "longitude": -38.2478462,
+          "latitude": -3.7435243,
+          "speed": 6.828689098358154,
+          "longitude": -38.5363656,
           "accuracy": 5
         }
       },
-      "lastfallPrediction": {
-        "error": "Falha na predição do modelo KNN."
-      },
-      "timestamp": "2025-02-09T23:34:19.700Z"
+      "lastfallPrediction": [
+        0
+      ],
+      "timestamp": "2025-02-11T23:37:27.020Z"
     }
   }
 ]

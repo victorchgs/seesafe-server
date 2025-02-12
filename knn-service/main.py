@@ -52,7 +52,7 @@ async def predict(data: PredictionRequest):
 
         features_scaled = scaler.transform(features) # normalizar features
         predictions = knn_model.predict(features_scaled) # fazer predição
-        
+
         return {"predictions": predictions.tolist()}
     
     except Exception as e:
