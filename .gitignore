@@ -1,4 +1,4 @@
 # dependencies
-node_modules/
-knn-service/__pycache__/
-knn-service/venv/
+server/node_modules/
+server/knn-service/__pycache__/
+server/knn-service/venv/
