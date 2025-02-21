@@ -35,7 +35,7 @@ SEESAFE-SERVER/
 │── readme.md            # Este arquivo.
 ```
 
-## 🚀 Como executar o Servidor
+## 🚀 Como executar o servidor
 
 Para executar o servidor do SeeSafe, siga os passos abaixo:
 
