@@ -32,6 +32,7 @@ SEESAFE-SERVER/
 │── data-analysis/       # Análises de dados de giroscópio e acelerômetro, além do treinamento e testes de modelos de predição de queda.
 │── documentation/       # Documentação detalhada sobre a implementação do projeto.
 │── server/              # Código-fonte do servidor, incluindo o microsserviço de visão computacional.
+│── .gitignore           # Arquivo de rastreamento do Git.
 │── readme.md            # Este arquivo.
 ```
 
