@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const devicesPath = "./data/devices.json";
+const devicesPath = "../data/devices.json";
 
 export function loadDevices() {
   try {

@@ -2,7 +2,7 @@
 
 ## 📌 Introdução
 
-De acordo com o IBGE, em 2023, o Brasil contava com mais de 6 milhões de pessoas com deficiência visual, sendo aproximadamente 500 mil delas cegas. Para se locomover, essas pessoas geralmente utilizam recursos como cães-guia ou bengalas. Embora eficientes, essas alternativas apresentam limitações, como o alto custo dos cães-guia e a incapacidade das bengalas de detectar obstáculos elevados. 
+De acordo com o IBGE, em 2023, o Brasil contava com mais de 6 milhões de pessoas com deficiência visual, sendo aproximadamente 500 mil delas cegas. Para se locomover, essas pessoas geralmente utilizam recursos como cães-guia ou bengalas. Embora eficientes, essas alternativas apresentam limitações, como o alto custo dos cães-guia e a incapacidade das bengalas de detectar obstáculos elevados.
 
 Nos últimos anos, surgiram soluções tecnológicas que oferecem suporte mais avançado, mas seu custo elevado ainda representa uma barreira para ampla adoção. Diante disso, propomos desenvolver um sistema de baixo custo que utiliza a câmera do celular para emitir alertas de áudio ou vibração sobre obstáculos no caminho e ao redor, democratizando o acesso a soluções tecnológicas e contribuindo para uma maior autonomia das pessoas com deficiência visual.
 
@@ -11,6 +11,7 @@ Nos últimos anos, surgiram soluções tecnológicas que oferecem suporte mais a
 O aplicativo utiliza visão computacional para processar imagens capturadas pela câmera do celular e identificar obstáculos no caminho do usuário. Além disso, descreve o ambiente ao redor em tempo real por meio de mensagens de áudio ou vibração.
 
 ### 🔹 Funcionalidades Principais
+
 - Identificação de obstáculos;
 - Notificação de perigos no caminho;
 - Interface simples e acessível para pessoas com deficiência visual;
@@ -39,35 +40,45 @@ SEESAFE-SERVER/
 Para executar o servidor do SeeSafe, siga os passos abaixo:
 
 ### 1️⃣ Criar e ativar um ambiente virtual (Python)
+
 ```bash
+cd server/knn-service
 python -m venv venv
 source venv/bin/activate  # No Linux/macOS
 venv\Scripts\activate     # No Windows
 ```
 
-### 2️⃣ Instalar as dependências
+### 2️⃣ Instalar as dependências do microsserviço
+
 ```bash
-pip install -r server/knn-service/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3️⃣ Executar o microserviço
+
 ```bash
-python server/knn-service/main.py
+python main.py
 ```
 
-### 4️⃣ Rodar o servidor CoAP
-O servidor CoAP também precisa ser iniciado. Para isso, siga os comandos abaixo:
+### 4️⃣ Instalar as dependências do servidor CoAP
+
 ```bash
-cd server/coap-server
+cd server
 npm install
+```
+
+### 5️⃣ Executar o servidor CoAP
+
+```bash
 npm start
 ```
 
-Agora, o servidor estará rodando e pronto para receber requisições!
+Agora, o servidor estará executando e pronto para receber requisições!
 
 ## 🤝 Contribuição
+
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
 
 ## 📜 Licença
-Este projeto está licenciado sob a **Creative Commons BY-NC**. Isso significa que você pode usar, modificar e distribuir o código **desde que não o utilize para fins comerciais**. Para mais detalhes, consulte o arquivo `LICENSE`.
 
+Este projeto está licenciado sob a **Creative Commons BY-NC**. Isso significa que você pode usar, modificar e distribuir o código **desde que não o utilize para fins comerciais**. Para mais detalhes, consulte o arquivo `LICENSE`.

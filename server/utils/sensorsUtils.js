@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const sensorsDataPath = "./data/sensorsData.json";
+const sensorsDataPath = "../data/sensorsData.json";
 
 export function loadSensorsData(deviceId) {
   if (!fs.existsSync(sensorsDataPath)) {

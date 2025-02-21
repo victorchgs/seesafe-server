@@ -1,12 +1,11 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node servers/coap.js"
+    "start": "node server/coap.js"
   },
   "dependencies": {
     "axios": "^1.7.9",
     "coap": "^1.4.0",
-    "crypto-js": "^4.2.0",
-    "express": "^4.21.2"
+    "crypto-js": "^4.2.0"
   }
 }
