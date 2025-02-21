@@ -1,4 +1,4 @@
-# SeeSafe-Server
+# SeeSafe Server
 
 ## 📌 Introdução
 
@@ -6,24 +6,24 @@ De acordo com o IBGE, em 2023, o Brasil contava com mais de 6 milhões de pessoa
 
 Nos últimos anos, surgiram soluções tecnológicas que oferecem suporte mais avançado, mas seu custo elevado ainda representa uma barreira para ampla adoção. Diante disso, propomos desenvolver um sistema de baixo custo que utiliza a câmera do celular para emitir alertas de áudio ou vibração sobre obstáculos no caminho e ao redor, democratizando o acesso a soluções tecnológicas e contribuindo para uma maior autonomia das pessoas com deficiência visual.
 
-## 📱 Descrição da Aplicação
+## 📱 Descrição do aplicativo
 
 O aplicativo utiliza visão computacional para processar imagens capturadas pela câmera do celular e identificar obstáculos no caminho do usuário. Além disso, descreve o ambiente ao redor em tempo real por meio de mensagens de áudio ou vibração.
 
-### 🔹 Funcionalidades Principais
+### 🔹 Funcionalidades principais
 
 - Identificação de obstáculos;
 - Notificação de perigos no caminho;
 - Interface simples e acessível para pessoas com deficiência visual;
 - Possibilidade de envio de informações a um responsável.
 
-## 🎯 Público-Alvo
+## 🎯 Público-alvo
 
 O SeeSafe é destinado a pessoas com deficiência visual parcial ou total que buscam uma ferramenta acessível e eficiente para auxiliar na locomoção diária, especialmente em áreas urbanas. Além disso, o aplicativo também atende responsáveis ou cuidadores dessas pessoas, que poderão monitorar informações importantes, como a localização do usuário principal e receber avisos de emergência.
 
 ---
 
-## 📂 Organização do Repositório
+## 📂 Organização do repositório
 
 Este repositório está organizado da seguinte forma:
 
@@ -35,7 +35,7 @@ SEESAFE-SERVER/
 │── readme.md            # Este arquivo.
 ```
 
-## 🚀 Como Rodar o Servidor
+## 🚀 Como executar o servidor
 
 Para executar o servidor do SeeSafe, siga os passos abaixo:
 
