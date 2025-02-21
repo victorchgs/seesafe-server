@@ -31,7 +31,7 @@ Este repositório está organizado da seguinte forma:
 SEESAFE-SERVER/
 │── data-analysis/       # Análises de dados de giroscópio e acelerômetro, além do treinamento e testes de modelos de predição de queda.
 │── documentation/       # Documentação detalhada sobre a implementação do projeto.
-│── server/              # Código-fonte do servidor, incluindo o microserviço de visão computacional.
+│── server/              # Código-fonte do servidor, incluindo o microsserviço de visão computacional.
 │── readme.md            # Este arquivo.
 ```
 
@@ -54,7 +54,7 @@ venv\Scripts\activate     # No Windows
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Executar o microserviço
+### 3️⃣ Executar o microsserviço
 
 ```bash
 python main.py
