@@ -1,0 +1,645 @@
+[
+  {
+    "deviceId": "id-1736944661991-5edruykfb7e",
+    "sensorsReadings": [
+      {
+        "accelerometerData": {
+          "x": -0.02636718563735485,
+          "y": 0.01123046875,
+          "z": 1.01220703125,
+          "timestamp": 139690.248102166
+        },
+        "gyroscopeData": {
+          "x": 0,
+          "y": -0.0012217304902151227,
+          "z": 0.0006108652451075613,
+          "timestamp": 139690.128083782
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 14.449000358581543,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944714478
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/fb5a0828-8090-426b-b9db-5b43072df6f9.jpg",
+        "timestamp": "2025-01-15T12:38:56.465Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.02612304501235485,
+          "y": 0.00927734375,
+          "z": 1.010009765625,
+          "timestamp": 139712.935481888
+        },
+        "gyroscopeData": {
+          "x": 0.0006108652451075613,
+          "y": -0.0006108652451075613,
+          "z": 0.0006108652451075613,
+          "timestamp": 139712.875537888
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 35.40399932861328,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944728448
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/108f320a-6fa9-4825-9f09-8e5a535bb3be.jpg",
+        "timestamp": "2025-01-15T12:39:10.701Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.025634765625,
+          "y": 0.00830078125,
+          "z": 1.00537109375,
+          "timestamp": 139727.266436987
+        },
+        "gyroscopeData": {
+          "x": 0,
+          "y": 0,
+          "z": 0.0006108652451075613,
+          "timestamp": 139727.206512872
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 56.79199981689453,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944742707
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/a91293b1-d525-4d96-b0b2-ef3d2dcea699.jpg",
+        "timestamp": "2025-01-15T12:39:19.175Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.02612304501235485,
+          "y": 0.009521484375,
+          "z": 1.010009765625,
+          "timestamp": 139736.898084104
+        },
+        "gyroscopeData": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "timestamp": 139736.858230027
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 70.37899780273438,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944751765
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/2e422320-9133-434e-89ec-68dde79a2a11.jpg",
+        "timestamp": "2025-01-15T12:39:27.179Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.02612304501235485,
+          "y": 0.007324218284338713,
+          "z": 1.01171875,
+          "timestamp": 139745.123089726
+        },
+        "gyroscopeData": {
+          "x": 0,
+          "y": -0.0006108652451075613,
+          "z": 0.0006108652451075613,
+          "timestamp": 139745.083236265
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 82.4260025024414,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944759796
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/dd8427fc-355f-42c5-aeca-8944ed16a1f4.jpg",
+        "timestamp": "2025-01-15T12:39:35.996Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.025146484375,
+          "y": 0.01025390625,
+          "z": 1.009033203125,
+          "timestamp": 139753.217425311
+        },
+        "gyroscopeData": {
+          "x": 0.0006108652451075613,
+          "y": -0.0006108652451075613,
+          "z": 0,
+          "timestamp": 139753.157481273
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 95.53299713134766,
+            "longitude": -38.5782066,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448661,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944768534
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/2f80607f-32b1-4a71-b5ce-b76ce612b552.jpg",
+        "timestamp": "2025-01-15T12:39:52.363Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.02661132998764515,
+          "y": 0.009033203125,
+          "z": 1.01171875,
+          "timestamp": 139762.214163623
+        },
+        "gyroscopeData": {
+          "x": 0,
+          "y": -0.0006108652451075613,
+          "z": 0.0006108652451075613,
+          "timestamp": 139762.174322046
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 39.5,
+            "longitude": -38.5778783,
+            "altitude": 15.500000953674316,
+            "heading": 89.00952911376953,
+            "latitude": -3.7448604,
+            "altitudeAccuracy": 1.7508279085159302,
+            "speed": 2.5965957641601562
+          },
+          "mocked": false,
+          "timestamp": 1736944789561
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/d1a05a70-f041-408e-a1ff-6fbce10abcdb.jpg",
+        "timestamp": "2025-01-15T12:40:01.590Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.025634765625,
+          "y": 0.00927734375,
+          "z": 1.01220703125,
+          "timestamp": 139778.94040652
+        },
+        "gyroscopeData": {
+          "x": 0.0006108652451075613,
+          "y": -0.0006108652451075613,
+          "z": 0,
+          "timestamp": 139778.880529598
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 42.75899887084961,
+            "longitude": -38.5778705,
+            "altitude": 15.500000953674316,
+            "heading": 89.00952911376953,
+            "latitude": -3.7448603,
+            "altitudeAccuracy": 1.7508279085159302,
+            "speed": 0.3743739128112793
+          },
+          "mocked": false,
+          "timestamp": 1736944793907
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/cad6f2fe-6aa6-4448-841b-fc8942d8c8c1.jpg",
+        "timestamp": "2025-01-15T12:40:19.626Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.076904296875,
+          "y": 0.975830078125,
+          "z": 0.266357421875,
+          "timestamp": 139796.958219913
+        },
+        "gyroscopeData": {
+          "x": -0.0012217304902151227,
+          "y": -0.16310101747512817,
+          "z": -0.1508837193250656,
+          "timestamp": 139796.898266067
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 73.45500183105469,
+            "longitude": -38.5778762,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448604,
+            "altitudeAccuracy": 1.7508279085159302,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944812198
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/5a89232e-3606-4d9a-b0d7-3166a40a1485.jpg",
+        "timestamp": "2025-01-15T12:40:28.324Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.222412109375,
+          "y": 1.00341796875,
+          "z": 0.2365722507238388,
+          "timestamp": 139806.752830491
+        },
+        "gyroscopeData": {
+          "x": 0.05192354694008827,
+          "y": 0.12522737681865692,
+          "z": -0.11056660860776901,
+          "timestamp": 139806.712944568
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 40.5,
+            "longitude": -38.5783672,
+            "altitude": 15.500000953674316,
+            "heading": 253.00389099121094,
+            "latitude": -3.7450102,
+            "altitudeAccuracy": 2.1154699325561523,
+            "speed": 1.8134944438934326
+          },
+          "mocked": false,
+          "timestamp": 1736944826024
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/1a155f66-ea3c-4aea-8c78-5064b6e82dca.jpg",
+        "timestamp": "2025-01-15T12:40:40.187Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.004638671875,
+          "y": 0.489990234375,
+          "z": 0.8564453721046448,
+          "timestamp": 139819.175995136
+        },
+        "gyroscopeData": {
+          "x": -0.5772676467895508,
+          "y": -0.04703662544488907,
+          "z": 0.001832595793530345,
+          "timestamp": 139819.116023444
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 25,
+            "longitude": -38.5781946,
+            "altitude": 15.500000953674316,
+            "heading": 53.9940185546875,
+            "latitude": -3.7449115,
+            "altitudeAccuracy": 2.235555648803711,
+            "speed": 0.7624456286430359
+          },
+          "mocked": false,
+          "timestamp": 1736944838034
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/52dddeba-0d63-448f-ba15-105da339ca13.jpg",
+        "timestamp": "2025-01-15T12:40:52.165Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.04638671875,
+          "y": 0.37158203125,
+          "z": 0.929931640625,
+          "timestamp": 139831.451780935
+        },
+        "gyroscopeData": {
+          "x": 0.021380282938480377,
+          "y": 0.030543262138962746,
+          "z": -0.06719517707824707,
+          "timestamp": 139831.411881397
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 35.5,
+            "longitude": -38.5781378,
+            "altitude": 15.500000953674316,
+            "heading": 0.24418877065181732,
+            "latitude": -3.7447827,
+            "altitudeAccuracy": 2.3553874492645264,
+            "speed": 0.49191218614578247
+          },
+          "mocked": false,
+          "timestamp": 1736944850017
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/3e7b66ad-d97c-444e-8b2f-01f21748011f.jpg",
+        "timestamp": "2025-01-15T12:41:05.891Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.1188964918255806,
+          "y": 0.2128906399011612,
+          "z": 0.9890136122703552,
+          "timestamp": 139846.569373378
+        },
+        "gyroscopeData": {
+          "x": -0.27061331272125244,
+          "y": 0.23884831368923187,
+          "z": 1.1985175609588623,
+          "timestamp": 139846.529544301
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 29.5,
+            "longitude": -38.5782157,
+            "altitude": 15.500000953674316,
+            "heading": 359.83984375,
+            "latitude": -3.7448269,
+            "altitudeAccuracy": 2.495269298553467,
+            "speed": 1.2072901725769043
+          },
+          "mocked": false,
+          "timestamp": 1736944864004
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/28409522-dd22-4fbd-90e2-5bc8a8754cf0.jpg",
+        "timestamp": "2025-01-15T12:41:12.641Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.028564453125,
+          "y": 1.08447265625,
+          "z": 0.4182128608226776,
+          "timestamp": 139853.207352929
+        },
+        "gyroscopeData": {
+          "x": 0.47769662737846375,
+          "y": 0.03481931984424591,
+          "z": 0.02076941914856434,
+          "timestamp": 139853.147450083
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 53.76499938964844,
+            "longitude": -38.5782297,
+            "altitude": 15.500000953674316,
+            "heading": 88.94253540039062,
+            "latitude": -3.7447865,
+            "altitudeAccuracy": 2.495269298553467,
+            "speed": 0.5947864055633545
+          },
+          "mocked": false,
+          "timestamp": 1736944870457
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/b99773dc-5b4d-492b-9b55-7b3865be4c8f.jpg",
+        "timestamp": "2025-01-15T12:41:21.433Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.064697265625,
+          "y": 0.76171875,
+          "z": 0.4843750298023224,
+          "timestamp": 139859.954981327
+        },
+        "gyroscopeData": {
+          "x": -0.17776179313659668,
+          "y": -0.5119050741195679,
+          "z": -0.07269296050071716,
+          "timestamp": 139859.915107096
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 39,
+            "longitude": -38.578154,
+            "altitude": 15.500000953674316,
+            "heading": 0.805076003074646,
+            "latitude": -3.7448257,
+            "altitudeAccuracy": 2.645522356033325,
+            "speed": 1.1660836935043335
+          },
+          "mocked": false,
+          "timestamp": 1736944879030
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/4972bb82-4ca2-4b5d-baf1-5838448668cc.jpg",
+        "timestamp": "2025-01-15T12:41:27.301Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.010009765625,
+          "y": 0.447021484375,
+          "z": 0.82080078125,
+          "timestamp": 139868.733565601
+        },
+        "gyroscopeData": {
+          "x": -0.2382374405860901,
+          "y": 0.07269296050071716,
+          "z": 0.18814650177955627,
+          "timestamp": 139868.693771447
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 64.15299987792969,
+            "longitude": -38.5781458,
+            "altitude": 15.500000953674316,
+            "heading": 3.596606969833374,
+            "latitude": -3.7447912,
+            "altitudeAccuracy": 2.645522356033325,
+            "speed": 1.124162197113037
+          },
+          "mocked": false,
+          "timestamp": 1736944885378
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/3eccbf7f-b943-4bac-86cb-c944612919e0.jpg",
+        "timestamp": "2025-01-15T12:42:05.537Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.02685547061264515,
+          "y": 0.266357421875,
+          "z": 0.9052734375,
+          "timestamp": 139906.059567228
+        },
+        "gyroscopeData": {
+          "x": 0.4294382631778717,
+          "y": 0.4300491213798523,
+          "z": -0.1362229436635971,
+          "timestamp": 139906.019645036
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 17.57900047302246,
+            "longitude": -38.5782203,
+            "altitude": 15.500000953674316,
+            "heading": 0,
+            "latitude": -3.7448149,
+            "altitudeAccuracy": 1,
+            "speed": 0
+          },
+          "mocked": false,
+          "timestamp": 1736944923140
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/cdf174aa-be50-4fed-b431-3147de6af78e.jpg",
+        "timestamp": "2025-01-15T12:42:10.625Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.2353515475988388,
+          "y": 0.02612304501235485,
+          "z": 0.63720703125,
+          "timestamp": 139911.638687206
+        },
+        "gyroscopeData": {
+          "x": 0.12828169763088226,
+          "y": -0.45875978469848633,
+          "z": 1.1582005023956299,
+          "timestamp": 139911.578831822
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 44.24100112915039,
+            "longitude": -38.5781933,
+            "altitude": 15.500000953674316,
+            "heading": 124.0980453491211,
+            "latitude": -3.7448331,
+            "altitudeAccuracy": 1.0586837530136108,
+            "speed": 0.4116358458995819
+          },
+          "mocked": false,
+          "timestamp": 1736944929009
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/cd50a953-3c58-490a-87e0-946221bcc28e.jpg",
+        "timestamp": "2025-01-15T12:42:13.696Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 1.58349609375,
+          "y": -1.7216798067092896,
+          "z": 0.642578125,
+          "timestamp": 139917.44670553
+        },
+        "gyroscopeData": {
+          "x": -5.586973667144775,
+          "y": -6.221662521362305,
+          "z": 3.765373468399048,
+          "timestamp": 139917.386848685
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 44.18199920654297,
+            "longitude": -38.578179,
+            "altitude": 15.500000953674316,
+            "heading": 124.20716094970703,
+            "latitude": -3.7448429,
+            "altitudeAccuracy": 1.0586837530136108,
+            "speed": 0.47833600640296936
+          },
+          "mocked": false,
+          "timestamp": 1736944932112
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/f0ea6782-0b8b-48f4-a1ed-c68ca72b0f87.jpg",
+        "timestamp": "2025-01-15T12:42:18.070Z"
+      },
+      {
+        "accelerometerData": {
+          "x": 0.113525390625,
+          "y": 0.307861328125,
+          "z": 0.6640625,
+          "timestamp": 139921.751340553
+        },
+        "gyroscopeData": {
+          "x": -0.11484266817569733,
+          "y": -0.14905111491680145,
+          "z": -0.039706241339445114,
+          "timestamp": 139921.731556514
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 44.19200134277344,
+            "longitude": -38.5781706,
+            "altitude": 15.500000953674316,
+            "heading": 124.20340728759766,
+            "latitude": -3.7448486,
+            "altitudeAccuracy": 1.0586837530136108,
+            "speed": 0.3966761827468872
+          },
+          "mocked": false,
+          "timestamp": 1736944936446
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/282b2a5f-c246-4f7c-8291-31a057222510.jpg",
+        "timestamp": "2025-01-15T12:42:22.073Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.109619140625,
+          "y": -0.254150390625,
+          "z": 0.730224609375,
+          "timestamp": 139925.471032423
+        },
+        "gyroscopeData": {
+          "x": -0.028099801391363144,
+          "y": -1.0366383790969849,
+          "z": -0.09529497474431992,
+          "timestamp": 139925.431166731
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 44.41699981689453,
+            "longitude": -38.5781681,
+            "altitude": 15.500000953674316,
+            "heading": 123.66748046875,
+            "latitude": -3.7448499,
+            "altitudeAccuracy": 1.0586837530136108,
+            "speed": 0.3038344383239746
+          },
+          "mocked": false,
+          "timestamp": 1736944940179
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/1785ea31-b460-49f7-893b-b75e50bf6cc3.jpg",
+        "timestamp": "2025-01-15T12:42:32.462Z"
+      },
+      {
+        "accelerometerData": {
+          "x": -0.100341796875,
+          "y": -0.529296875,
+          "z": 0.8574219346046448,
+          "timestamp": 139928.835797256
+        },
+        "gyroscopeData": {
+          "x": -0.42577308416366577,
+          "y": 0.3378084897994995,
+          "z": -0.13744467496871948,
+          "timestamp": 139928.795941679
+        },
+        "geolocationData": {
+          "coords": {
+            "accuracy": 36,
+            "longitude": -38.5781911,
+            "altitude": 15.500000953674316,
+            "heading": 44.843772888183594,
+            "latitude": -3.7448407,
+            "altitudeAccuracy": 1.268837332725525,
+            "speed": 0.4599701166152954
+          },
+          "mocked": false,
+          "timestamp": 1736944950023
+        },
+        "imageData": "file:///data/user/0/com.anonymous.seesafeapp/cache/Camera/caca3ff3-d5b7-4c31-8405-979ecac9d933.jpg",
+        "timestamp": "2025-01-15T12:42:38.379Z"
+      }
+    ]
+  }
+]
